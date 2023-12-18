@@ -1,12 +1,19 @@
 [build]
-  command = "npm run build"  # Adjust this based on your build script
-  publish = "dist"           # Adjust this based on your build output directory
+  command = "npm install && npm run build"  # Replace with your build command
+  publish = "dist"  # Replace with the folder where your built files are located
 
-[context.production.environment]
-  # Add production environment variables
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
 
-[context.deploy-preview.environment]
-  # Add deploy-preview environment variables
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
 
-[context.branch-deploy.environment]
-  # Add branch-deploy environment variables
+[[redirects]]
+  from = "/api/*"
+  to = "http://localhost:3000/:splat"
+  status = 200
+  force = true

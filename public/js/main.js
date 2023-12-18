@@ -1,30 +1,30 @@
-// Import necessary modules and the route files
-const express = require("express");
-const bodyParser = require("body-parser");
-const authRoutes = require("../../src/routes/authRoutes");
-const eventsRoutes = require("../../src/routes/eventRoutes");
-
-// Create an Express application instance as a server
-const app = express();
-
-// Add middleware to parse incoming JSON requests
-app.use(bodyParser.json());
-
-// Use the defined routes for authentication and events
-app.use("/auth", authRoutes);
-app.use("/events", eventsRoutes);
-
-// Start the server, listen on the specified port, and log a message to the console.
-const PORT = process.env.PORT || 3000;
-const server = app.listen(PORT, () => {
-    console.log(`Server is running on the port ${PORT}`);
-});
-
-// Close the server function
-function closeServer(callback) {
-    server.close(callback);
+// Common functionality for all pages
+document.addEventListener('DOMContentLoaded', () => {
+    console.log('DOM content loaded');
+    // Add shared functionality here
+  });
+  
+  // Functionality specific to User Authentication page
+  function authenticateUser() {
+    console.log('Authenticating user...');
+    // Add authentication logic here
   }
-
-// Export the Express application for testing purposes
-module.exports = app;
-module.exports.closeServer = closeServer;
+  
+  // Functionality specific to Event Listing page
+  function displayEventList(events) {
+    console.log('Displaying event list:', events);
+    // Add event listing logic here
+  }
+  
+  // Functionality specific to Ticket Selection and Purchase page
+  function selectAndPurchaseTicket() {
+    console.log('Selecting and purchasing ticket...');
+    // Add ticket selection and purchase logic here
+  }
+  
+  // Functionality specific to User Profile page
+  function displayUserProfile(user) {
+    console.log('Displaying user profile:', user);
+    // Add user profile display logic here
+  }
+  
