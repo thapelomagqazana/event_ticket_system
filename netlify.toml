@@ -1,0 +1,12 @@
+[build]
+  command = "npm run build"  # Adjust this based on your build script
+  publish = "dist"           # Adjust this based on your build output directory
+
+[context.production.environment]
+  # Add production environment variables
+
+[context.deploy-preview.environment]
+  # Add deploy-preview environment variables
+
+[context.branch-deploy.environment]
+  # Add branch-deploy environment variables
