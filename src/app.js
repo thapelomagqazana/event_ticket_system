@@ -3,6 +3,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const authRoutes = require("./routes/authRoutes");
 const eventsRoutes = require("./routes/eventRoutes");
+const ticketRoutes = require("./routes/ticketRoutes");
 
 // Create an Express application instance as a server
 const app = express();
@@ -13,6 +14,7 @@ app.use(bodyParser.json());
 // Use the defined routes for authentication and events
 app.use("/auth", authRoutes);
 app.use("/events", eventsRoutes);
+app.use("/tickets", ticketRoutes);
 
 // Start the server, listen on the specified port, and log a message to the console.
 const PORT = process.env.PORT || 3000;
