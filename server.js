@@ -6,10 +6,12 @@ const eventsRoutes = require("./src/routes/eventRoutes");
 const ticketRoutes = require("./src/routes/ticketRoutes");
 const userRoutes = require("./src/routes/userRoutes");
 const path = require("path");
+const cors = require("cors");
 
 // Create an Express application instance as a server
 const app = express();
 
+app.use(cors());
 // Serve static files from the 'dist' directory
 app.use(express.static(path.join(__dirname, 'dist')));
 
