@@ -11,6 +11,9 @@ const cors = require("cors");
 // Create an Express application instance as a server
 const app = express();
 
+app.use(cors({
+    origin: "*"
+}));
 
 // Serve static files from the 'dist' directory
 app.use(express.static(path.join(__dirname, 'dist')));
@@ -19,9 +22,9 @@ app.use(express.static(path.join(__dirname, 'dist')));
 app.use(bodyParser.json());
 
 
-app.use(cors({
-    origin: "http://localhost:3000"
-}));
+// app.use(cors({
+//     origin: "http://localhost:3000"
+// }));
 
 // Handle all other routes (*) by sending the 'index.html' file
 app.get("*", (req, res) => {
