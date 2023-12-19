@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Function to send form data to the backend
   function sendFormData(endpoint, formData) {
-    fetch(`http://localhost:3000${endpoint}`, {
+    fetch(`/api${endpoint}`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
