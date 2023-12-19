@@ -11,18 +11,22 @@ const cors = require("cors");
 // Create an Express application instance as a server
 const app = express();
 
-app.use(cors());
+
 // Serve static files from the 'dist' directory
 app.use(express.static(path.join(__dirname, 'dist')));
+
+// Add middleware to parse incoming JSON requests
+app.use(bodyParser.json());
+
+
+app.use(cors({
+    origin: "http://localhost:3000"
+}));
 
 // Handle all other routes (*) by sending the 'index.html' file
 app.get("*", (req, res) => {
     res.sendFile(path.join(__dirname, 'dist', 'index.html'));
 });
-
-
-// Add middleware to parse incoming JSON requests
-app.use(bodyParser.json());
 
 // Use the defined routes for authentication and events
 app.use("/auth", authRoutes);
