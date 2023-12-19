@@ -1,5 +1,5 @@
 [build]
-  command = "npm install && npm run build"  # Replace with your build command
+  command = "npm install && npm run build && npm start" # Replace with your build command
   publish = "dist"  # Replace with the folder where your built files are located
 
 [[redirects]]

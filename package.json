@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node server.js",
     "build": "npm install && npm run build-client",
-    "build-client": "mkdir -p dist && cp -r src/views/* dist/",
+    "build-client": "mkdir -p dist && cp -r src/views/* dist/ && cp server.js dist/",
     "test": "jest tests"
   },
   "keywords": [],
