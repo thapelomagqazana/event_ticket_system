@@ -11,9 +11,14 @@ const cors = require("cors");
 // Create an Express application instance as a server
 const app = express();
 
-app.use(cors({
-    origin: "*"
-}));
+app.use(cors());
+
+// app.use((req, res, next) => {
+//     res.setHeader('Access-Control-Allow-Origin', '*');
+//     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+//     res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+//     next();
+// });
 
 // Serve static files from the 'dist' directory
 app.use(express.static(path.join(__dirname, 'dist')));
